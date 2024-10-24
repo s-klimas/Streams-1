@@ -1,0 +1,10 @@
+INSERT INTO customer (id, name, tier) VALUES (1, 'Stefan Walker', 1);
+INSERT INTO customer (id, name, tier) VALUES (2, 'Daija Von', 1);
+INSERT INTO customer (id, name, tier) VALUES (3, 'Ariane Rodriguez', 1);
+INSERT INTO customer (id, name, tier) VALUES (4, 'Marques Nikolaus', 2);
+INSERT INTO customer (id, name, tier) VALUES (5, 'Rachelle Greenfelder', 0);
+INSERT INTO customer (id, name, tier) VALUES (6, 'Larissa White', 2);
+INSERT INTO customer (id, name, tier) VALUES (7, 'Fae Heidenreich', 1);
+INSERT INTO customer (id, name, tier) VALUES (8, 'Dino Will', 2);
+INSERT INTO customer (id, name, tier) VALUES (9, 'Eloy Stroman', 1);
+INSERT INTO customer (id, name, tier) VALUES (10, 'Brisa O''Connell', 1);

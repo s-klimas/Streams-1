@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.2.xsd">
+    <changeSet id="1" author="sebastianklimas">
+        <createTable tableName="customer">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="tier" type="INT"/>
+        </createTable>
+
+        <createTable tableName="product">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="category" type="VARCHAR(255)"/>
+            <column name="price" type="DOUBLE"/>
+        </createTable>
+
+        <createTable tableName="product_order">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="order_date" type="DATE"/>
+            <column name="delivery_date" type="DATE"/>
+            <column name="status" type="VARCHAR(255)"/>
+            <column name="customer_id" type="BIGINT"/>
+        </createTable>
+
+        <createTable tableName="order_product_relationship">
+            <column name="order_id" type="BIGINT" autoIncrement="true">
+                <constraints nullable="false"
+                             primaryKey="true"
+                             foreignKeyName="fk_product_order_order_id"
+                             referencedTableName="product_order"
+                             referencedColumnNames="id"
+                             primaryKeyName="pk_order_product_relationship"
+                />
+            </column>
+            <column name="product_id" type="BIGINT" autoIncrement="true">
+                <constraints nullable="false"
+                             primaryKey="true"
+                             foreignKeyName="fk_product_product_id"
+                             referencedTableName="product"
+                             referencedColumnNames="id"
+                             primaryKeyName="pk_order_product_relationship"
+                />
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
